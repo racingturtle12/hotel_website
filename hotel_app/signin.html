@@ -1,0 +1,132 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+<title>Metroo otel</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+
+	<link rel="stylesheet" href="slider.css">
+	<link rel="stylesheet" href="style.css">
+
+
+<script>
+	function SignIn()
+	{
+
+		var user = document.getElementById("uname").value;
+		var pass = document.getElementById("upass").value;
+		
+
+		if(user==""){alert("Enter Username"); return false;}
+		else if(pass==""){alert("Enter Password"); return false;}
+		else
+		{
+			ruser = sessionStorage.getItem("user");
+			rpass = sessionStorage.getItem("pass");
+			
+			if(user == ruser)
+			{
+				if(pass == rpass)
+				{
+					alert("login successfully.");
+					window.location.href="profile.html";
+				}
+				else{alert("Invalid Password\nPlease Provide correct Password");}
+			}else{alert("Invalid Username\nPlease Provide correct Username");}
+			//alert("thank you");
+			//sessionStorage.setItem("user", user);
+			//sessionStorage.setItem("pass", pass);
+			//sessionStorage.setItem("mail", mail);
+			//sessionStorage.setItem("address", adrs);
+			//sessionStorage.getItem("lastname");
+			//window.location.href="signin.html";
+		}
+
+		
+	}
+
+</script>
+</head>
+<body>
+
+	
+
+	<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+		<a class="navbar-brand" href="index.html">Metroo Hotel</a>
+			<input type="search" placeholder="search" id="search-input" style="width:300px; border-radius:5px; border:ridge 1px lightgray; padding:5px;  margin-left:350px;">
+			
+			<div class="social-media order-lg-last">
+				
+				<p class="mb-0 d-flex">
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+				</p>
+				</div>
+		</div>
+	</nav>
+	<div id='search-results'></div>
+	<div class="row" id="sky_div" style="margin:0 auto; width:1024px">
+		<div class="col-2">
+			<a href="#" style="color:black"> Overview</a>	
+		</div>
+		<div class="col-2">
+			<a href="#" style="color:black"> Amenties</a>	
+		</div>
+		<div class="col-2">
+			<a href="#" style="color:black"> Guests</a>	
+		</div>
+		<div class="col-2">
+			<a href="signin.html" style="color:black; font-weight: bolder;"> Sign in</a>
+		</div>
+		<div class="col-2">
+			<a href="signup.html" style="color:black"> Signup</a>
+		</div>
+
+		<div class="col-2">
+			<a href="index.html" style="color:black">Booking</a>
+		</div>
+
+		<div style="width:50%; height:400px; margin-top:20px; margin:0 auto;" id="Main1">
+			
+			<div style="border:solid px gray; width:100%;  float:left; margin-top:20px;height:335px">
+					<table style="width:100%">
+						<tr><td colspan="2" align="center" style="font-size:20px">SignIn</td></tr>
+<tr>
+	<td>Username</td>
+	<td><input type="text" id="uname" class="form-control"> </td>
+
+</tr>
+<tr>
+	<td>Password</td>
+	<td><input type="password" id="upass" class="form-control"> </td>
+
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="button" value="SignIn" class="btn btn-primary" onclick="SignIn()">
+		<a href="signup.html"> <input type="button" value="SignUp" class="btn btn-secondary"></a>
+		</td>
+					</table>
+			</div>
+		</div>
+		</div>
+
+		
+				
+<script>
+<script src="jquery.min.js"></script>
+<script src="popper.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="main.js"></script>
+<script src="beacon.min.js"></script>
+</body>
+</html>

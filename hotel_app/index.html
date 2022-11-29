@@ -1,0 +1,702 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+<title>Metroo Hotel</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+
+<link rel="stylesheet" href="slider.css">
+
+<script>
+	var foodListarr = new Array("Milk","Bread","Butter","Cheese","Yogurt","Sandwich","Pancake","Pie");
+	var sec=1;
+	function RoomSlideShow()
+	{
+		if(sec==5)
+		{
+			document.getElementById("slideImage").src="room/"+sec+".png";
+			sec=1;
+		}
+		else
+		{
+			document.getElementById("slideImage").src="room/"+sec+".png";
+			sec++;
+		}
+	
+	}
+	setInterval("RoomSlideShow()",3000);
+	
+	
+	var aritem = new Array("Laxuary Smart Room","Laxuary Large Room");
+	var arprice = new Array("200","300");
+	function onloading()
+	{
+			document.getElementById('selctedRoom').innerHTML = aritem[0];
+			document.getElementById('p1').src=aritem[0]+".png";
+			document.getElementById('roomInfo').innerHTML = aritem[0];
+			document.getElementById('roomprice').innerHTML = arprice[0];
+
+			
+			document.getElementById("RoomInformation_id").value = aritem[0];
+			document.getElementById("RoomInformation_id").style.display="none";
+			document.getElementById("RoomInformation_idspan").innerHTML = aritem[0];
+			
+
+			//document.getElementById('selctedRoom').innerHTML = aritem[roomNo+1];
+			document.getElementById('p2').src=aritem[1]+".png";
+			document.getElementById('roomInfo2').innerHTML = aritem[1];
+			document.getElementById('roomprice2').innerHTML = arprice[1];
+
+
+			/*document.getElementById('roomInfo2').innerHTML = aritem[1];
+			document.getElementById('roomInfo2').innerHTML = aritem[1];
+			document.getElementById('roomInfo2').innerHTML = aritem[1];*/
+	}
+	function Room(roomNo)
+	{
+		
+			document.getElementById('selctedRoom').innerHTML = aritem[roomNo];
+			document.getElementById('p1').src=aritem[roomNo]+".png";
+			document.getElementById('roomInfo').innerHTML = aritem[roomNo];
+			document.getElementById('roomprice').innerHTML = arprice[roomNo];
+			document.getElementById("RoomInformation_id").value = aritem[roomNo];
+			document.getElementById("RoomInformation_id").style.display="none";
+			document.getElementById("RoomInformation_idspan").innerHTML = aritem[roomNo];
+
+
+
+
+			document.getElementById('p2').src=aritem[roomNo+1]+".png";
+			document.getElementById('roomInfo2').innerHTML = aritem[roomNo+1];
+			document.getElementById('roomprice2').innerHTML = arprice[roomNo+1];
+	}	
+
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="onloading()" style="background-color:yellow;">
+
+	
+
+	<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+		<a class="navbar-brand" href="index.html">Metroo Hotel</a>
+			<input type="search" placeholder="search" id="search-input" style="width:300px; border-radius:5px; border:ridge 1px lightgray; padding:5px;  margin-left:350px;">
+			
+			<div class="social-media order-lg-last">
+				
+				<p class="mb-0 d-flex">
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+				<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+
+				</p>
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+				</button>
+				<div class="collapse navbar-collapse" id="ftco-nav" >
+					<ul class="navbar-nav ml-auto mr-md-3" style="display:none">
+						<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="signin.html" class="nav-link">Sign in</a></li>
+						<li class="nav-item"><a href="signup.html" class="nav-link">Signup</a></li>
+						<li class="nav-item"><a href="index.html" class="nav-link">Booking</a></li>
+					</ul>
+				</div>
+		</div>
+	</nav>
+	<div id='search-results'></div>
+	<div class="row" id="sky_div" style="margin:0 auto; width:1024px">
+		
+		<div class="col-2">
+			<a href="#" style="color:black"> Overview</a>	
+		</div>
+		<div class="col-2">
+			<a href="#" style="color:black"> Amenties</a>	
+		</div>
+		<div class="col-2">
+			<a href="#" style="color:black"> Guests</a>	
+		</div>
+		<div class="col-2">
+			<a href="signin.html" style="color:black"> Sign in</a>
+		</div>
+		<div class="col-2">
+			<a href="signup.html" style="color:black"> Signup</a>
+		</div>
+
+		<div class="col-2">
+			<a href="index.html" style="color:black; font-weight: bolder;">Booking</a>
+		</div>
+
+
+
+		<div style="width:100%; height:400px; margin-top:10px" id="Main1">
+			<div style="width:60%; height:335px; float:left; margin-top:20px;">
+			
+			<div id="image_map"> 
+				<map name="map_example"> 
+				<area title="Laxuary Smart Room" shape=poly coords="30,100, 140,50, 290,220, 180,280"> 
+				<area title="Laxuary Large Room" shape=poly coords="190,75, 200,60, 495,60, 495,165, 275,165" > 
+				</map> 
+				<img src="room/left.png" alt="image map example" width=600 height=332 usemap="#map_example"> 
+
+				</div>
+				<input type="button" value="Book Now" class="btn btn-primary" style="float:right; margin-top:3px; margin-right:150px" onclick="reserve()" >
+				<span id="selctedRoom" style="float:right; margin-top:50px; margin-right:10px; display:none" ></span>
+			</div>
+			<div style="border:solid 1px gray; width:40%;  float:left; margin-top:20px;height:335px;">
+				<img src="room/right.jpg" alt="image map example" style="width:100%; height:335px;"> 
+			</div>
+		</div>
+
+		
+		
+
+		<div style="width:100%; border:solid 0px black; float:left; margin-top:20px; display:none" id="Main2">
+			<div style="width:100%; border:solid 0px black; float:left; margin-top:20px; text-align:center; font-size:20px; font-weight:bold">
+			<input type="button" value="Back" class="btn btn-outline-danger" style="float:left; margin-left:10px" onclick="back()" >
+			<span>Booking Process</span>
+			</div>
+
+			<div style="width:100%; border:solid 1px black; float:left; margin-top:20px">
+				<table class="table">
+				<tr style="font-weight:bold">	
+					<td align="center">Check In</td>
+					<td align="center">Check Out </td>
+					<td align="center"></td>
+				</tr>
+				<tr>	
+				<td colspan="1">
+					<span style="margin-left:200px; margin-top:10px">Date</span>
+					<br><input type="date" id="chkIndate" class="form-control" style="margin-top:0px; width:100%"></td>
+					<td colspan="1">
+						<span style="margin-left:200px; margin-top:10px">Date</span>
+						<br><input type="date" id="chkoutdate" class="form-control" style="margin-top:0px; width:100%"></td>
+	
+
+				<td alight="right">
+					<span style="margin-left:200px; margin-top:10px">Rooms & Guests</span>
+					</br>
+					<select class="form-control" id="ddlPerson" style="width:90%;margin-left:45px">
+						<option value="1 Adult, 2 children">1 Adult, 2 children</option>
+						<option value="2 Adult, 1 children">2 Adult, 1 children</option>
+						<option value="2 Adult, 2 children">2 Adult, 2 children</option>
+						<option value="1 Adult, 3 children">1 Adult, 3 children</option>
+						<option value="2 Adult, 3 children">2 Adult, 3 children</option>
+					</select> 
+				</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="right">
+						<input type="button" class="btn btn-primary" value="Book Now" style="width:200px; margin-right:10px;" onclick="BookNow()">
+					</td>
+				</tr>
+				</table>
+				<span id="chDate" style="display:none"></span>
+				<span id="choutDate" style="display:none"></span>
+				
+				<span id="ddprsn" style="display:none"></span>
+			</div>
+		</div>
+
+				<div style="width:100%; border:solid 1px gray; display:none" id="Main3">
+					
+					<table style="width:100%; border:solid 1px gray;">
+						<tr style="background-color:skyblue">
+							<td width="250"> 
+							<img src="" style="width:100%; height:200px" id="p1"></td>
+							<td id="roomInfo"> Room Detail  </td>
+							<td id="roomprice"> Price nights </td>
+						</tr>
+						<tr>
+							<td colspan="3" align="right"> <input type="button" value="Select" class="btn btn-secondary" style="width:200px" onclick="BookSelectedRoom(0)">	</td>
+						</tr>
+						<tr>
+							<td colspan="3" align="left"> this location is perfect for a weekend stay</td>
+						</tr>
+					</table>
+				</div>
+				<div style="width:100%; border:solid 1px gray; display:none" id="Main4">
+					<table style="width:100%; border:solid 1px gray;">
+						<tr style="background-color:skyblue">
+							<td width="250"> <img src="" style="width:100%; height:200px" id="p2"></td>
+							<td id="roomInfo2"> Room Detail  </td>
+							<td id="roomprice2"> Price nights </td>
+						</tr>
+						<tr>
+							<td colspan="3" align="right"> 
+								<input type="button" value="Select" class="btn btn-secondary" style="width:200px" onclick="BookSelectedRoom(1)">	
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" align="left"> this location is perfect for a weekend stay</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<div style="width:100%; border:solid 1px gray; display:none" id="Main5">
+					<div style="width:100%; border:solid 0px gray; float:left; margin-top:20px; text-align:center; font-size:20px; font-weight:bold">
+						<input type="button" value="Back" class="btn btn-outline-danger" style="float:left; margin-left:10px" onclick="backfrom()" >
+						<span>Room Information</span>
+					</div>
+					<div style="width:60%; height:400px; border:solid 1px gray; float:left; margin-top:20px; height:400px">
+						<div style="width:100%; text-align:center;">
+							<img src="" style="width:80%; height:210px; border-radius:5px; box-shadow: 0px 0px 5px 5px gray; margin-top:10px;" id="slideImage">
+						</div>
+	 
+						<div style="width:100%; text-align:center">
+							<table style="width:100%">
+								<tr>
+									<td>Room Information</td>
+									<td>Food Choice</td>
+									<td>Recommendations</td>
+								</tr>
+
+								<tr>
+									<td>
+										
+										<input type="text" id="RoomInformation_id" style="border: solid 0px; background-color: antiquewhite; display:none" readonly>
+										<span id="RoomInformation_idspan"></span>
+									</td>
+									<td>
+										<textarea id="tfoods" style="display: none" readonly></textarea>
+										<span id="tfoodsspan">breakfast is free and included in the room price</span>
+									</td>
+									<td>
+										<textarea id="trecom" style="display: none"></textarea>
+										<span id="trecomspan">Free breakfast included</span>
+									</td>
+								</tr>
+							</table>
+							<span id="lblfood"></span>
+							<span id="lblrecom"></span>
+
+						</div>
+						<input type="button" class="btn btn-success" value="RESERVE" style="float:right; margin-right:10px" onclick="ShowPaymentInfo()">
+					</div>
+					<div style="width:70%; border:solid 1px gray; width:40%; border:solid 1px gray; float:left; margin-top:20px;height:400px; display:none" id="R2">
+						<div style="width:100%; text-align:left">
+							<table style="width:100%">
+								<tr>
+									<td style="text-align: center; font-weight: bold; font-size: 20px;">Confirmation Information</td></tr>
+								<tr>
+									<td id="RoomInformation_td">
+									</td>
+								</tr>
+								
+								<tr>
+									
+									<td style="text-align: center; font-weight: bold; font-size: 20px;">Payment Information</td>
+								</tr>
+								<tr>
+									<td id="paymentMethod"></td>
+								</tr>
+								
+
+								<tr>	<td align="right"><input type="button" style="margin-top: -10px;" class="btn btn-success" value="Pay now" onclick="SecurePayment()"> </td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+		
+				<div style="width:100%; border:solid 1px gray; display:none" id="Main6">
+					<div style="width:100%; border:solid 0px gray; float:left; margin-top:20px; text-align:center; font-size:20px; font-weight:bold">
+						<input type="button" value="Back" class="btn btn-outline-danger" style="float:left; margin-left:10px" onclick="backfromPaymentInfo()" >
+						<span>Secure Payment Form</span>
+					</div>
+					<div style="width:100%; border:solid 1px gray; border:solid 1px gray; float:left; margin-top:20px;>
+						<div style="width:100%; text-align:left;">
+							<table style="width:100%; background-color:skyblue">
+								<tr>
+									<td style="width:50%; font-weight: bold;">Required information</td>
+									<td style="width:50%; font-weight: bold;">Booking Description</td>
+								</tr>
+								<tr>
+									<td>
+									<table style="width:100%">
+										<tr>	
+											<td><input type="text" class="form-control" id="cname" placeholder="Name"> </td>
+										</tr>
+										<tr>
+											<td><input type="number" class="form-control" id="cpass" placeholder="Phone"> </td>
+										</tr>
+										<tr>	
+											<td><input type="email" class="form-control" id="cmail" placeholder="Email address"> </td>
+										</tr>
+										<tr>	
+											<td><input type="text" class="form-control" id="caddress" placeholder="Address"> </td>
+										</tr>
+									</table>
+									</td>
+									<td rowspan="4">
+									<table style="width:100%">
+										<tr>	
+											<td id="bookingDescription" valign="top" style="padding:10px; font-weight: bold;"> 
+												
+											</td>
+										</tr>
+										<tr>	
+											<td align="center" valign="center"><input type="button" class="btn btn-success" value="Book" onclick="BookPayNow()"> </td>
+										</tr>
+										
+									</table>
+									</td>	
+								</tr>
+								<tr>
+									<td>
+										<table>
+											<tr>
+												<td>Payment Information</td>
+												<td><img src="q1.png">  <img src="q2.png"> </td>
+												<td></td>
+											</tr>
+										</table>
+										</td>
+									
+								</tr>
+								<tr>
+									<td>
+									<table style="width:100%">
+										<tr>	
+											<td><input type="text" id="credit" class="form-control" placeholder="Provide credit card No"> </td>
+										</tr>
+										<tr>	
+											<td><input type="text" id="cvv" class="form-control" placeholder="Provide C-V-V Code"> </td>
+										</tr>
+										<tr>	
+											<td><input type="date" id="expiray" class="form-control" placeholder="Expiray Date"> </td>
+										</tr>
+										
+									</table>
+									</td>
+									
+								</tr>
+								<tr>
+									<td><input type="checkbox" id="agree"> Terms and Conditions</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+									<table style="width:100%">
+										<tr>	
+											<td style="font-size: 12px;"> 
+												(1) Guest name and telephone number<br>
+												(2) The date of stay and estimated time of arrival<br>
+												(3) Accommodation fees（generally based on the Basic Accommodation Fees in Appendix 1. ）<br>
+												(4) Other information the hotel deems necessary
+											</td>
+										</tr>
+									</table>
+									</td>
+									
+								</tr>
+								<tr>
+									<td>Cancellation Policy</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+									<table style="width:100%">
+										<tr>	
+											<td style="font-size: 12px;"> 
+												(1) When the guest violates the Hotel Rules and Regulations stipulated in Article 10, <br>
+												commits any of the prohibited acts set forth in Article 11, or otherwise fails to comply with <br>
+												these Terms and Conditions or with rules on cancellation and payment when making a reservation.<br>
+												(2) Repeatedly making and canceling bookings without a justifiable reason, or any similar acts<br>
+												(3) Excludes cases in which the guest cancels the accommodation agreement prior to such payment.
+
+											</td>
+										</tr>
+									</table>
+									</td>
+							</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+				<div style="width:100%; border:solid 0px gray; margin:0 auto; display:none" id="Main7">
+					<div style="width:100%; border:solid 0px gray; float:left; margin-top:20px; text-align:center;">
+						<input type="button" id="btnxyz" value="Back" class="btn btn-outline-danger" style="float:left; margin-left:10px" onclick="backfromBookingConfirmation()" >
+						<span>Booking Confirmation</span><br>
+						<img src="succ.png" style="width:100px; height:70px"><br>
+
+						<div style="width:50%; border:solid 0px gray; margin-left:150px; float:left; text-align:left" id="fbookingdetailNow">
+
+						</div>
+						<div style="width:20%; border:solid 0px gray; float:left; text-align:left; font-weight: bold;" id="">
+							Check In<br>
+							5:00 AM<br>
+							7:00 AM<br>
+							<br><br><br><br><br><br>
+
+							<div>
+								<img src="email.png">
+								<img src="print.png" onclick="printDiv()">
+								<img src="mobile.png">
+								
+							</div>
+						</div>
+
+				
+					</div>
+				
+				</div>
+
+
+	</div>
+
+
+<script>
+	function reserve()
+	{
+		document.getElementById("Main1").style.display="none";
+			document.getElementById("Main2").style.display="block";
+			document.getElementById("Main3").style.display="none";
+			document.getElementById("Main4").style.display="none";
+			document.getElementById("Main5").style.display="none";
+		/*if(document.getElementById("selctedRoom").innerHTML!="")
+		{
+			
+		}
+		else
+		{
+			alert("Pleaes click on Room Image\n for booking");
+		}*/
+		
+
+	}
+	function back()
+	{
+		document.getElementById("Main1").style.display="block";
+		document.getElementById("Main2").style.display="none";
+		document.getElementById("Main3").style.display="none";
+		document.getElementById("Main4").style.display="none";
+		document.getElementById("Main5").style.display="none";
+		
+	}
+		
+	function BookNow()
+	{
+		// adding person and checkIn date
+		var checkIndate = document.getElementById("chkIndate").value;
+		var chkoutdate = document.getElementById("chkoutdate").value;
+		
+		var person		=  document.getElementById("ddlPerson").value;
+		document.getElementById("chDate").innerHTML = checkIndate+"_"+chkoutdate;
+		document.getElementById("choutDate").innerHTML = chkoutdate;
+		
+		document.getElementById("ddprsn").innerHTML = person;
+		if(checkIndate !="" && person !="" && chkoutdate !="")
+		{
+			document.getElementById("Main1").style.display="none";
+			document.getElementById("Main2").style.display="block";
+			document.getElementById("Main3").style.display="block";
+			document.getElementById("Main4").style.display="block";
+			document.getElementById("Main5").style.display="none";
+		}
+		else
+		{
+			alert("Please Provide checkIn date checkout date & No of Adults");
+		}
+	}
+	var ifoodAmount=0;
+	function BookSelectedRoom(option)
+	{
+		Room(option);
+		document.getElementById("Main1").style.display="none";
+		document.getElementById("Main2").style.display="none";
+		document.getElementById("Main3").style.display="none";
+		document.getElementById("Main4").style.display="none";
+		document.getElementById("Main5").style.display="block";
+
+		var j=1;
+
+		for(var i=0; i<foodListarr.length; i++)
+		{
+
+			document.getElementById("tfoods").value +=j+" - "+foodListarr[i]+"\n";
+			document.getElementById("tfoods").style.display="none";
+			document.getElementById("tfoodsspan").value +=j+" - "+foodListarr[i]+"\n";
+			
+			
+			ifoodAmount +=  Math.floor(Math.random() * 5) + 1;
+			j++;
+		}
+		document.getElementById("tfoods").readonly=true;
+		document.getElementById("tfoods").style.display="none";
+	}
+	function backfrom()
+	{
+		document.getElementById("Main1").style.display="none";
+		document.getElementById("Main2").style.display="block";
+		document.getElementById("Main3").style.display="block";
+		document.getElementById("Main4").style.display="block";
+		document.getElementById("Main5").style.display="none";
+		document.getElementById("R2").style.display="none";
+	}
+
+	function ShowPaymentInfo()
+	{
+		
+		var trecom = document.getElementById("trecom").value == "" ? document.getElementById("trecomspan").innerHTML:document.getElementById("trecomspan").innerHTML;
+		var tfoods = document.getElementById("tfoods").value == "" ? document.getElementById("tfoodsspan").innerHTML:document.getElementById("tfoodsspan").innerHTML;
+
+		document.getElementById("lblfood").value = tfoods;
+		document.getElementById("lblrecom").value = trecom;
+
+		if(tfoods.length>0 && trecom.length>0)
+		{
+			document.getElementById("Main1").style.display="none";
+			document.getElementById("Main2").style.display="none";
+			document.getElementById("Main3").style.display="none";
+			document.getElementById("Main4").style.display="none";
+			document.getElementById("Main5").style.display="block";
+			document.getElementById("R2").style.display="block";
+
+
+			// Confirmation Info Here
+			// document.getElementById("chDate").innerHTML
+			// document.getElementById("ddprsn").innerHTML
+			
+			document.getElementById("RoomInformation_td").innerHTML  = "Room &nbsp;: "+document.getElementById("roomInfo").innerHTML +"<br>";
+			document.getElementById("RoomInformation_td").innerHTML += "Adult : "+document.getElementById("ddprsn").innerHTML+"<br>";
+			document.getElementById("RoomInformation_td").innerHTML += "Foods : "+tfoods+"<br>";
+			document.getElementById("RoomInformation_td").innerHTML += "Recommendations : "+trecom+"<br>";
+			
+			
+			var chdar = document.getElementById("chDate").innerHTML.split("_");
+
+			document.getElementById("paymentMethod").innerHTML  = "CheckIn Date : "+chdar[0] +"<br>Checkout Date : "+chdar[1];
+			document.getElementById("paymentMethod").innerHTML += "<br>Room charges : $"+document.getElementById("roomprice").innerHTML;
+			//ifoodAmount;
+			document.getElementById("paymentMethod").innerHTML += "<br>Food Charges  : $"+ifoodAmount;
+			document.getElementById("paymentMethod").innerHTML += "<br>total Charges : $"+(ifoodAmount+parseInt(document.getElementById("roomprice").innerHTML));
+			
+			
+
+		}
+		else
+		{
+			alert("Please Provid Food List & your recommendations");
+		}
+	}
+	function SecurePayment()
+	{
+		document.getElementById("Main1").style.display="none";
+		document.getElementById("Main2").style.display="none";
+		document.getElementById("Main3").style.display="none";
+		document.getElementById("Main4").style.display="none";
+		document.getElementById("Main5").style.display="none";
+		document.getElementById("R2").style.display="none";
+		document.getElementById("Main6").style.display="block";
+		document.getElementById("bookingDescription").innerHTML =  document.getElementById("RoomInformation_td").innerHTML;
+		document.getElementById("bookingDescription").innerHTML += document.getElementById("paymentMethod").innerHTML;
+
+	}	
+
+	function backfromPaymentInfo()
+	{
+		document.getElementById("Main1").style.display="none";
+		document.getElementById("Main2").style.display="none";
+		document.getElementById("Main3").style.display="none";
+		document.getElementById("Main4").style.display="none";
+		document.getElementById("Main5").style.display="Block";
+		document.getElementById("R2").style.display="Block";
+		document.getElementById("Main6").style.display="none";
+	}	
+	function BookPayNow()
+	{
+		var cname 	 = document.getElementById("cname").value;
+		var cpass 	 = document.getElementById("cpass").value;
+		var cmail 	 = document.getElementById("cmail").value;
+		var caddress = document.getElementById("caddress").value;
+		var credit 	 = document.getElementById("credit").value;
+		var cvv 	 = document.getElementById("cvv").value;
+		var expiray  = document.getElementById("expiray").value;
+		
+
+		if(cname==""){alert("Please Enter Name"); return false;}
+		else if(cpass==""){alert("Please Enter Phone"); return false;}
+		else if(cmail==""){alert("Please Enter email"); return false;}
+		else if(caddress==""){alert("Please Enter address"); return false;}
+		else if(credit==""){alert("Please Enter Credit Card No"); return false;}
+		else if(credit.length>1 && credit.length<16){alert("Please Enter Credit Card 16 digit"); return false;}
+		else if(cvv==""){alert("Please Enter CVV No"); return false;}
+		else if(cvv.length>1 && cvv.length<4){alert("Please Enter 4 digit CVV No"); return false;}
+		
+		else if(expiray==""){alert("Please Enter Credit Card expirary date"); return false;}
+		else if(document.getElementById("agree").checked==true)
+		{
+			
+			sessionStorage.setItem("user", cname);
+			sessionStorage.setItem("pass", cpass);
+			sessionStorage.setItem("mail", cmail);
+			sessionStorage.setItem("address", caddress); 
+
+			// credit,cvv,expiray
+			// cname,cpass,cmail,caddress
+			document.getElementById("Main1").style.display="none";
+			document.getElementById("Main2").style.display="none";
+			document.getElementById("Main3").style.display="none";
+			document.getElementById("Main4").style.display="none";
+			document.getElementById("Main5").style.display="none";
+			document.getElementById("R2").style.display="none";
+			document.getElementById("Main6").style.display="none";
+			document.getElementById("Main7").style.display="block";
+
+			var CustomerInfor = "Name : "+cname+", Phone : "+cpass+" Email : "+cmail+", Address : "+caddress;
+			credit = credit.slice(-4);
+			
+			CustomerInfor += "<br>Credit Card Information : XXXXXXXXXXXX"+credit+", CVV Code : "+cvv+", Expiry Date :"+expiray+"<br>";
+
+			// Final Detail
+			// Booking Detail
+			document.getElementById("fbookingdetailNow").innerHTML ="<center>Booking Details</center><br>"+ CustomerInfor+"<br>";
+			document.getElementById("fbookingdetailNow").innerHTML += "Booking Description <br>"+document.getElementById("bookingDescription").innerHTML+"<br>";
+			sessionStorage.setItem("bookingInfo", document.getElementById("fbookingdetailNow").innerHTML);
+			sessionStorage.setItem("bookingInfoTable",document.getElementById("Main7").innerHTML);
+			alert("Thank you for Booking\n1. View Booking information\n2.Pleases Signup or login to view your invoice.");
+		}
+		else{alert("If you agree.\nPlease check mark on terms & conditions");}
+		
+	}
+	function backfromBookingConfirmation()
+	{
+		document.getElementById("Main1").style.display="none";
+		document.getElementById("Main2").style.display="none";
+		document.getElementById("Main3").style.display="none";
+		document.getElementById("Main4").style.display="none";
+		document.getElementById("Main5").style.display="none";
+		document.getElementById("R2").style.display="none";
+		document.getElementById("Main6").style.display="block";
+		document.getElementById("Main7").style.display="none";
+	}
+
+	function printDiv() {
+            var divContents = document.getElementById("Main7").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write(divContents);
+            a.document.close();
+            a.print();
+        }
+
+</script>
+
+<script src="jquery.min.js"></script>
+<script src="popper.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="main.js"></script>
+<script src="beacon.min.js"></script>
+</body>
+</html>
